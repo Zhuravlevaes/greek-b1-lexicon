@@ -1,1 +1,4 @@
-const C='greek-b1-v1.2',A=['./','./index.html','./manifest.webmanifest','./data.json','./CHANGELOG.md','./icon-192.png','./icon-512.png'];self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(A)))});self.addEventListener('activate',e=>e.waitUntil(Promise.all([clients.claim(),caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x))))])));self.addEventListener('fetch',e=>e.respondWith(fetch(e.request).then(r=>{let x=r.clone();caches.open(C).then(c=>c.put(e.request,x));return r}).catch(()=>caches.match(e.request))))
+const C='greek-b1-v1.3.0',A=['./','./index.html','./manifest.webmanifest','./data.json','./CHANGELOG.md'];
+self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(A)))});
+self.addEventListener('activate',e=>e.waitUntil(Promise.all([clients.claim(),caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x))))])));
+self.addEventListener('fetch',e=>e.respondWith(fetch(e.request).then(r=>{let x=r.clone();caches.open(C).then(c=>c.put(e.request,x));return r}).catch(()=>caches.match(e.request))));
