@@ -1,7 +1,6 @@
 {
   "name": "Greek B1 Lexicon",
   "short_name": "Greek B1",
-  "description": "Личная база греческой лексики B1 с интервальным повторением",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#F5F7FB",
